@@ -8,6 +8,7 @@ import ray.math.Vector;
  *
  * @author Eli Williams (erw19)
  */
+
 public class Triangle extends Surface {
     // These fields are read in from the input file.
     /* These points are the vertices of the triangle */
@@ -29,9 +30,6 @@ public class Triangle extends Surface {
     }
 
 
-    /**
-     * @see Surface#getIntersection()
-     */
     @Override
     public double[] getIntersection (Ray ray) {
         // TODO: return t values at which this ray intersects this surface
@@ -47,12 +45,12 @@ public class Triangle extends Surface {
     	double uu = u.dot(u);
     	double uv = u.dot(v);
     	double vv = v.dot(v);
-    	double d = uv * uv - uu * vv;
+    	double d = ((uv * uv) - (uu * vv));
     	double wu = w.dot(u);
     	double wv = w.dot(v);
     	
-    	double beta = (uv * wv - vv * wu) / d;
-    	double gamma = (uv * wu - uu * wv) / d;
+    	double beta = ((uv * wv) - (vv * wu)) / d;
+    	double gamma = ((uv * wu) - (uu * wv)) / d;
     	
     	if(i < 0.0){
     		return new double[0];
@@ -69,9 +67,6 @@ public class Triangle extends Surface {
     	}
     }
 
-    /**
-     * @see Surface#getNormal()
-     */
     @Override
     public Vector getNormal (Point point) {
         // TODO: return vector representing this surface's normal at this point

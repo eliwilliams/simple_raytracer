@@ -2,7 +2,6 @@
 
 An implementation of a simple and inefficient ray tracer in Java. This project makes use of JOGL, a (Java specifc) binding for the OpenGL API.
 
-To-Do:
-1) Fix double math (0 equality statement).
-2) Fix triangle getIntersection (math error in calculations).
-3) Fix scaling for Lambertian and Phong shading.
+This tracer now features support for sphere and triangle models defined in the .xml files included in the repo.
+Additionally, ambient, Lambertian and Blinn-Phong shading coefficients are included in the renders.
+Support is yet to be added for reflection and refraction, so that is why some xml files do not render properly.

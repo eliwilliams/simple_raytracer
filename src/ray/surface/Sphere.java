@@ -9,6 +9,7 @@ import ray.math.Vector;
  *
  * @author Eli Williams (erw19)
  */
+
 public class Sphere extends Surface {
     // These fields are read in from the input file.
     /** The center of the sphere. */
@@ -26,9 +27,6 @@ public class Sphere extends Surface {
     }
 
 
-    /**
-     * @see Surface#getIntersection()
-     */
     @Override
     public double[] getIntersection (Ray ray) {
         // TODO: return t values at which this ray intersects this surface
@@ -49,7 +47,7 @@ public class Sphere extends Surface {
     	if(discriminant < 0){
     		return new double[0];
     	}
-    	else if(discriminant == 0){
+    	else if(discriminant < 0.000001){
     		double[] one_return = {((-1.0 * b) / (2.0 * a))};
     		return one_return;
     	}
@@ -62,9 +60,6 @@ public class Sphere extends Surface {
     	}
     }
 
-    /**
-     * @see Surface#getNormal()
-     */
     @Override
     public Vector getNormal (Point pt) {
         // TODO: return vector representing this surface's normal at this point
